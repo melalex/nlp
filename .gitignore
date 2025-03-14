@@ -1,0 +1,12 @@
+/data/external
+/data/processed
+/.venv
+/.vscode
+/Makefile.venv
+/models
+__pycache__
+*.log
+.DS_Store
+/reports/span-detection/test-visualization
+/reports/span-detection-ru/test-visualization
+/reports/span-detection-ua/test-visualization
