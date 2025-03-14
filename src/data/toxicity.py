@@ -13,13 +13,6 @@ def load_toxicity_dataset(folder, cache_folder, tokenizer, seed, train_size=0.9)
     if cache_path.exists():
         return DatasetDict.load_from_disk(cache_path)
 
-    def map_ds_row(data):
-        tokenized = tokenizer(data["text"], truncation=True)
-
-        tokenized["label"] = [1 if it > 0.5 else 0 for it in data["label"]]
-
-        return tokenized
-
     zip_path = download_dataset(
         "jigsaw-unintended-bias-in-toxicity-classification", folder
     )
@@ -37,9 +30,21 @@ def load_toxicity_dataset(folder, cache_folder, tokenizer, seed, train_size=0.9)
     ds = ds.shuffle(seed)
     ds = ds.train_test_split(train_size=train_size)
 
-    ds = ds.map(map_ds_row, batched=True)
+    ds = ds.map(preprocess(tokenizer))
     ds = ds.cast_column("label", Value("int32"))
 
     ds.save_to_disk(cache_path)
 
     return ds
+
+
+def preprocess(tokenizer):
+
+    def currying(data):
+        tokenized = tokenizer(data["text"].lower(), truncation=True)
+
+        tokenized["label"] = 1 if data["label"] > 0.5 else 0
+
+        return tokenized
+
+    return currying
