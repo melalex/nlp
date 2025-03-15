@@ -2,7 +2,14 @@ import pandas as pd
 
 from datasets import Dataset, DatasetDict, Value
 
-from src.data.kaggle import download_dataset, unzip_file
+from src.data.kaggle import download_competition_dataset, unzip_file
+
+TOXICITY_LABEL_TO_ID = {
+    "non-toxic": 0,
+    "toxic": 1,
+}
+
+TOXICITY_ID_TO_LABEL = {v: k for k, v in TOXICITY_LABEL_TO_ID.items()}
 
 
 def load_toxicity_dataset(folder, cache_folder, tokenizer, seed, train_size=0.9):
@@ -13,7 +20,7 @@ def load_toxicity_dataset(folder, cache_folder, tokenizer, seed, train_size=0.9)
     if cache_path.exists():
         return DatasetDict.load_from_disk(cache_path)
 
-    zip_path = download_dataset(
+    zip_path = download_competition_dataset(
         "jigsaw-unintended-bias-in-toxicity-classification", folder
     )
 

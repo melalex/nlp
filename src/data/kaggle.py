@@ -26,7 +26,7 @@ def download_dataset(
     return file_path
 
 
-def download_dataset(
+def download_competition_dataset(
     competition: str,
     dest: Path,
     logger: logging.Logger = logging.getLogger(__name__),
@@ -64,3 +64,8 @@ def unzip_file(
             zip_ref.extractall(dest_file)
 
     return dest_file
+
+
+def submit_competition(path, message, competition):
+    kaggle.api.authenticate()
+    kaggle.api.competition_submit(path, message, competition)
