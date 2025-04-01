@@ -2,6 +2,8 @@ import logging
 from pathlib import Path
 import zipfile
 import kaggle
+import kagglehub
+import kagglehub.auth
 
 
 def download_dataset(
@@ -69,3 +71,14 @@ def unzip_file(
 def submit_competition(path, message, competition):
     kaggle.api.authenticate()
     kaggle.api.competition_submit(path, message, competition)
+
+
+def publish_model(path, framework, variation):
+    kagglehub.login()
+
+    username = kagglehub.auth.get_username()
+    model = path.stem
+
+    handle = f"{username}/{model}/{framework}/{variation}"
+
+    kagglehub.model_upload(handle, path)

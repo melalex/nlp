@@ -16,3 +16,4 @@ evaluate==0.4.3
 seqeval==1.2.2
 optuna==4.2.0
 openai==1.65.5
+kagglehub==0.3.10
