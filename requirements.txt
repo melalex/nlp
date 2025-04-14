@@ -17,3 +17,7 @@ seqeval==1.2.2
 optuna==4.2.0
 openai==1.65.5
 kagglehub==0.3.10
+wandb==0.19.9
+absl-py==2.2.2
+nltk==3.9.1
+rouge-score==0.1.2
