@@ -1,0 +1,41 @@
+{
+  "os": "Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "python": "CPython 3.12.3",
+  "startedAt": "2025-04-15T10:26:14.850868Z",
+  "program": "/home/melal/Workspace/nlp/notebooks/lab_1_2__xlsum.ipynb",
+  "codePath": "notebooks/lab_1_2__xlsum.ipynb",
+  "git": {
+    "remote": "git@github.com:melalex/nlp.git",
+    "commit": "390859b9ae27d2f7f9b1e1d832a409167b6a760d"
+  },
+  "email": "alexander.melashchenko@gmail.com",
+  "root": "/home/melal/Workspace/nlp",
+  "host": "melalex-windows",
+  "executable": "/home/melal/Workspace/nlp/.venv/bin/python",
+  "codePathLocal": "notebooks/lab_1_2__xlsum.ipynb",
+  "cpu_count": 12,
+  "cpu_count_logical": 24,
+  "gpu": "NVIDIA GeForce RTX 4080 SUPER",
+  "gpu_count": 1,
+  "disk": {
+    "/": {
+      "total": "1081101176832",
+      "used": "24911409152"
+    }
+  },
+  "memory": {
+    "total": "16269193216"
+  },
+  "cpu": {
+    "count": 12,
+    "countLogical": 24
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA GeForce RTX 4080 SUPER",
+      "memoryTotal": "17171480576",
+      "architecture": "Ada"
+    }
+  ],
+  "cudaVersion": "12.6"
+}
