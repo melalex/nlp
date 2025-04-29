@@ -1,8 +1,3 @@
-# UNLP 2025 Challenge. Manipulation detection and classification.
-
-* [Task Description](./references/task_description.md)
-* [Planing Notes](./references/planning.md)
-
 ## Environment setup
 
 Run:
@@ -38,13 +33,3 @@ make venv
     └── visualization <- Scripts to create exploratory and results oriented visualizations
         └── visualize.py
 ```
-
-## Naming convention
-
-### Jupyter notebooks
-
-Naming convention is a number (for ordering), the creator's initials, and a short `-` delimited description, e.g. `1.0-jqp-initial-data-exploration`.
-
-## Branching Strategy
-
-Branch per feature. Name: dev/{initials}/{feature_name}
