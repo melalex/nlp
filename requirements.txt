@@ -21,3 +21,4 @@ wandb==0.19.9
 absl-py==2.2.2
 nltk==3.9.1
 rouge-score==0.1.2
+bert-score==0.3.13
